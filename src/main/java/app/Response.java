@@ -1,6 +1,6 @@
 package app;
 
-public interface Responce {
+public interface Response {
     String address = "";
     String bankName = "";
     String countryISO2 = "";

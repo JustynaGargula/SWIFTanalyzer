@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Responce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/BasicResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/ExtendedResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/HeadquarterResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Responce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Response.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +48,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/Foldery/informatyka - dom/zadania na staż - aplikacje/Remitly2025/SWIFTanalyzer",
     "node.js.detected.package.eslint": "true",
@@ -69,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738258498604</updated>
       <workItem from="1738258500216" duration="27000" />
-      <workItem from="1738258569105" duration="581000" />
+      <workItem from="1738258569105" duration="2710000" />
     </task>
     <servers />
   </component>
