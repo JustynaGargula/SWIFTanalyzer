@@ -2,13 +2,12 @@ package app;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args) {
-        final String fileLocation = "../SWIFT_CODES_shorter.xlsx";
+        final String fileLocation = "../Interns_2025_SWIFT_CODES.xlsx";
         XlsxDataParser xlsxDataParser = new XlsxDataParser(fileLocation);
         HashMap <String[], HashMap<String, BasicResponse>> data;
 

@@ -1,0 +1,19 @@
+<configuration>
+    <!-- Define the root logging level for all logs -->
+    <root level="error"> <!-- Change to 'error' to display only error messages -->
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <!-- Define logging level specifically for MongoDB Driver -->
+    <logger name="org.mongodb.driver" level="warn"/> <!-- Only show warnings and errors for MongoDB -->
+
+    <!-- Define the appender for logging to the console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- Define the pattern of the log output -->
+        <encoder>
+            <!-- The log pattern: timestamp, thread, log level, logger name, and message -->
+            <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+</configuration>
