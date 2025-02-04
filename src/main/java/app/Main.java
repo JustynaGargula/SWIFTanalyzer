@@ -1,5 +1,7 @@
 package app;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,5 +14,10 @@ public class Main {
 
         xlsxDataParser.parseData();
         data = xlsxDataParser.getParsedData();
+
+        Dotenv dotenv = Dotenv.load();
+        String dbUri=dotenv.get("MONGO_URI");
+        Database db = new Database("SWIFTcodes", dbUri, data);
+        db.createDatabase();
     }
 }

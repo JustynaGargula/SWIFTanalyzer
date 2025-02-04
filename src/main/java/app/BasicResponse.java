@@ -1,5 +1,7 @@
 package app;
 
+import java.util.HashMap;
+
 public class BasicResponse implements Response {
     /*
     This implementation of Response contains 5 fields:

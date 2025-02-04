@@ -35,7 +35,7 @@ public class XlsxDataParser {
             //throw new RuntimeException(e);
         }
         Sheet sheet = workbook.getSheetAt(0);
-
+        sheet.removeRow(sheet.getRow(0));
         for (Row row: sheet){
             String countryCode = row.getCell(0).getStringCellValue();
             String swiftCode = row.getCell(1).getStringCellValue();
@@ -48,9 +48,14 @@ public class XlsxDataParser {
             boolean isHeadquarter = headquarterMatcher.find();
             BasicResponse parsedRow = new BasicResponse(address, bankName, countryCode, isHeadquarter, swiftCode);
             if( ! dataForCountryCode.containsKey(new String[]{countryCode, countryName})){
-                dataForCountryCode.put(new String[]{countryCode, countryName}, new HashMap<>());
+                HashMap<String, BasicResponse> rowData = new HashMap<>();
+                rowData.put(swiftCode, parsedRow);
+                dataForCountryCode.put(new String[]{countryCode, countryName}, rowData);
             }
-            dataForCountryCode.get(new String[]{countryCode, countryName}).put(swiftCode, parsedRow);
+            else {
+                dataForCountryCode.get(new String[]{countryCode, countryName}).put(swiftCode, parsedRow);
+            }
+
         }
     }
     public HashMap<String[], HashMap<String, BasicResponse>> getParsedData(){
