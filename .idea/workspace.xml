@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Fixed problems with logs and duplication of data">
+    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Refactored Database.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/DataEndpointsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +124,7 @@
       <workItem from="1738604402149" duration="4079000" />
       <workItem from="1738688706773" duration="3612000" />
       <workItem from="1738692805004" duration="2310000" />
-      <workItem from="1738753568064" duration="670000" />
+      <workItem from="1738753568064" duration="4020000" />
     </task>
     <task id="LOCAL-00001" summary="Prepared response classes.">
       <created>1738261486056</created>
@@ -162,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738695117573</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactored Database.java">
+      <option name="closed" value="true" />
+      <created>1738754336878</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738754336878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +198,7 @@
     <MESSAGE value="Finished parsing xlsx file" />
     <MESSAGE value="Created database and connected to it" />
     <MESSAGE value="Fixed problems with logs and duplication of data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed problems with logs and duplication of data" />
+    <MESSAGE value="Refactored Database.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Database.java" />
   </component>
 </project>

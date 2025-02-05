@@ -1,9 +1,12 @@
 package app;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.HashMap;
 
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {
@@ -21,5 +24,8 @@ public class Main {
         Database db = new Database("SWIFTcodes", dbUri, data);
         db.createDatabase();
         db.sendDataFromXlsxFile();
+
+        // starting REST API
+        SpringApplication.run(Main.class, args);
     }
 }
