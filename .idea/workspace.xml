@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Fixed problems with logs and duplication of data">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
     </list>
@@ -123,7 +121,8 @@
       <workItem from="1738574038147" duration="3518000" />
       <workItem from="1738604402149" duration="4079000" />
       <workItem from="1738688706773" duration="3612000" />
-      <workItem from="1738692805004" duration="2272000" />
+      <workItem from="1738692805004" duration="2310000" />
+      <workItem from="1738753568064" duration="670000" />
     </task>
     <task id="LOCAL-00001" summary="Prepared response classes.">
       <created>1738261486056</created>
@@ -155,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738691610896</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed problems with logs and duplication of data">
+      <option name="closed" value="true" />
+      <created>1738695117573</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738695117573</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -11,12 +11,15 @@ public class Main {
         XlsxDataParser xlsxDataParser = new XlsxDataParser(fileLocation);
         HashMap <String[], HashMap<String, BasicResponse>> data;
 
+        // parsing data from .xlsx file
         xlsxDataParser.parseData();
         data = xlsxDataParser.getParsedData();
 
+        // connecting to database
         Dotenv dotenv = Dotenv.load();
         String dbUri=dotenv.get("MONGO_URI");
         Database db = new Database("SWIFTcodes", dbUri, data);
         db.createDatabase();
+        db.sendDataFromXlsxFile();
     }
 }

@@ -13,6 +13,8 @@ public class Database {
     private final String dbName;
     private final String connectionString;
     HashMap <String[], HashMap<String, BasicResponse>> data;
+    MongoDatabase database;
+    MongoClient mongoClient;
 
     public Database(String dbName, String connectionString, HashMap <String[], HashMap<String, BasicResponse>> data) {
         this.dbName = dbName;
@@ -20,9 +22,8 @@ public class Database {
         // connectionString looks like that: "mongodb+srv://userName:dbPassword@cluster0.rnpbj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
         this.data = data;
     }
-
-    public void createDatabase() {
-        try {
+    public void createDatabase(){
+        try{
             ServerApi serverApi = ServerApi.builder()
                     .version(ServerApiVersion.V1)
                     .build();
@@ -30,12 +31,20 @@ public class Database {
                     .applyConnectionString(new ConnectionString(connectionString))
                     .serverApi(serverApi)
                     .build();
-            MongoClient mongoClient = MongoClients.create(settings);
-            MongoDatabase database = mongoClient.getDatabase(dbName);
+            mongoClient = MongoClients.create(settings);
+            database = mongoClient.getDatabase(dbName);
             System.out.println("Connected to database");
+        } catch(Exception e){
+            System.out.printf("ERROR: couldn't connect to database. Details: %s\n", e.getMessage());
+        }
+    }
+
+    public void sendDataFromXlsxFile() {
+        try {
             MongoCollection<Document> collection;
             BasicResponse response;
             Document doc;
+
             for(String[] key : data.keySet()) {
                 String countryCode = key[0];
                 String countryName = key[1];
@@ -53,9 +62,9 @@ public class Database {
                 }
             }
             mongoClient.close();
+            System.out.println("Finished sending data to database");
         } catch (Exception e) {
-            System.out.printf("ERROR: couldn't connect to database. Details: %s\n", e.getMessage());
+            System.out.printf("ERROR: couldn't send data to database. Details: %s\n", e.getMessage());
         }
-        System.out.println("Finished connecting to database");
     }
 }
