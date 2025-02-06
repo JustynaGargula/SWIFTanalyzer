@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/v1/swift-codes")
 public class DataEndpointsController {
     @GetMapping("/{swiftCode}")
-    public  void getSingleSwiftCode(@PathVariable int swiftCode) {
+    public  String getSingleSwiftCode(@PathVariable String swiftCode) {
         // TODO pobrać z bazy dane dla SwiftCode i jeśli to headquarter to znaleźć i dołączyć branches
         //TODO response o odpowiedniej strukturze
+        return "Got SWIFTcode: " + swiftCode;
     }
 
     @GetMapping("/country/{countryISO2code}")

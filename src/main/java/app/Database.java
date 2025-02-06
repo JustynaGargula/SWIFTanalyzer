@@ -12,15 +12,13 @@ import java.util.HashMap;
 public class Database {
     private final String dbName;
     private final String connectionString;
-    HashMap <String[], HashMap<String, BasicResponse>> data;
     MongoDatabase database;
     MongoClient mongoClient;
 
-    public Database(String dbName, String connectionString, HashMap <String[], HashMap<String, BasicResponse>> data) {
+    public Database(String dbName, String connectionString) {
         this.dbName = dbName;
         this.connectionString = connectionString;
         // connectionString looks like that: "mongodb+srv://userName:dbPassword@cluster0.rnpbj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-        this.data = data;
     }
     public void createDatabase(){
         try{
@@ -39,7 +37,7 @@ public class Database {
         }
     }
 
-    public void sendDataFromXlsxFile() {
+    public void sendDataFromXlsxFile(HashMap <String[], HashMap<String, BasicResponse>> data) {
         try {
             MongoCollection<Document> collection;
             BasicResponse response;
