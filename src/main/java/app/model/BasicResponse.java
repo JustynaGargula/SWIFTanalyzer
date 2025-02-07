@@ -1,6 +1,6 @@
-package app;
+package app.model;
 
-import java.util.HashMap;
+import app.Response;
 
 public class BasicResponse implements Response {
     /*

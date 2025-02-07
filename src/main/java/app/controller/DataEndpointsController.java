@@ -1,16 +1,23 @@
 package app.controller;
 
-import app.ExtendedResponse;
+import app.model.ExtendedResponse;
+import app.Response;
+import app.service.DatabaseService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/swift-codes")
 public class DataEndpointsController {
+    private final DatabaseService databaseService;
+
+    public DataEndpointsController(DatabaseService databaseService) {
+        this.databaseService = databaseService;
+    }
+
     @GetMapping("/{swiftCode}")
-    public  String getSingleSwiftCode(@PathVariable String swiftCode) {
-        // TODO pobrać z bazy dane dla SwiftCode i jeśli to headquarter to znaleźć i dołączyć branches
-        //TODO response o odpowiedniej strukturze
-        return "Got SWIFTcode: " + swiftCode;
+    public ResponseEntity<Response> getSingleSwiftCode(@PathVariable String swiftCode) {
+        return ResponseEntity.ok(databaseService.getDataForSwiftCode(swiftCode));
     }
 
     @GetMapping("/country/{countryISO2code}")

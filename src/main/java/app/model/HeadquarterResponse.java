@@ -1,6 +1,8 @@
-package app;
+package app.model;
 
-public class HeadquarterResponse implements Response{
+import app.Response;
+
+public class HeadquarterResponse implements Response {
     /*
     This implementation of Response contains 7 fields:
         "address": string,

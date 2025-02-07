@@ -1,6 +1,8 @@
-package app;
+package app.model;
 
-public class ExtendedResponse implements Response{
+import app.Response;
+
+public class ExtendedResponse implements Response {
     /*
     This implementation of Response contains 6 fields:
         "address": string,

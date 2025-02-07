@@ -1,5 +1,7 @@
 package app;
 
+import app.model.ExtendedResponse;
+import app.model.HeadquarterResponse;
 import com.mongodb.*;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -7,6 +9,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Database {
@@ -20,6 +23,11 @@ public class Database {
         this.connectionString = connectionString;
         // connectionString looks like that: "mongodb+srv://userName:dbPassword@cluster0.rnpbj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     }
+
+    public MongoDatabase getDatabase() {
+        return database;
+    }
+
     public void createDatabase(){
         try{
             ServerApi serverApi = ServerApi.builder()
@@ -37,22 +45,22 @@ public class Database {
         }
     }
 
-    public void sendDataFromXlsxFile(HashMap <String[], HashMap<String, BasicResponse>> data) {
+    public void sendDataFromXlsxFile(HashMap <String[], HashMap<String, ExtendedResponse>> data) {
         try {
             MongoCollection<Document> collection;
-            BasicResponse response;
+            ExtendedResponse response;
             Document doc;
 
             for(String[] key : data.keySet()) {
                 String countryCode = key[0];
-                String countryName = key[1];
-                collection = database.getCollection(countryCode+"-"+countryName);
+                collection = database.getCollection(countryCode);
                 for(String swiftCode: data.get(key).keySet()) {
                     if(collection.find(new Document("swiftCode", swiftCode)).first() == null) {
                         response = data.get(key).get(swiftCode);
                         doc = new Document("address", response.getAddress())
                                 .append("bankName", response.getBankName())
                                 .append("countryISO2", response.getCountryISO2())
+                                .append("countryName", response.getCountryName())
                                 .append("isHeadquarter", response.isHeadquarter())
                                 .append("swiftCode", swiftCode);
                         collection.insertOne(doc);

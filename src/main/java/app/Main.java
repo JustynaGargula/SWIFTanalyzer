@@ -1,5 +1,6 @@
 package app;
 
+import app.model.ExtendedResponse;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,7 +29,7 @@ public class Main {
     public static void parseAndSendData(){
         final String fileLocation = "../Interns_2025_SWIFT_CODES.xlsx";
         XlsxDataParser xlsxDataParser = new XlsxDataParser(fileLocation);
-        HashMap <String[], HashMap<String, BasicResponse>> data;
+        HashMap <String[], HashMap<String, ExtendedResponse>> data;
 
         // parsing data from .xlsx file
         xlsxDataParser.parseData();

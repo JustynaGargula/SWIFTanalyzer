@@ -1,5 +1,6 @@
 package app;
 
+import app.model.ExtendedResponse;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -8,7 +9,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,8 +20,8 @@ public class XlsxDataParser {
         this.fileLocation = fileLocation;
     }
 
-    // dataForCountryCode: dictionary of data for country code (and country name), containing dictionary of swift codes and parsed values (in BasicResponse object)
-    private HashMap <String[], HashMap<String, BasicResponse>> dataForCountryCode = new HashMap<>();
+    // dataForCountryCode: dictionary of data for country code (and country name), containing dictionary of swift codes and parsed values (in ExtendedResponse object)
+    private HashMap <String[], HashMap<String, ExtendedResponse>> dataForCountryCode = new HashMap<>();
 
     public void parseData(){
         FileInputStream file;
@@ -46,9 +46,9 @@ public class XlsxDataParser {
             Matcher headquarterMatcher = headquarterPattern.matcher(swiftCode);
 
             boolean isHeadquarter = headquarterMatcher.find();
-            BasicResponse parsedRow = new BasicResponse(address, bankName, countryCode, isHeadquarter, swiftCode);
+            ExtendedResponse parsedRow = new ExtendedResponse(address, bankName, countryCode, countryName, isHeadquarter, swiftCode);
             if( ! dataForCountryCode.containsKey(new String[]{countryCode, countryName})){
-                HashMap<String, BasicResponse> rowData = new HashMap<>();
+                HashMap<String, ExtendedResponse> rowData = new HashMap<>();
                 rowData.put(swiftCode, parsedRow);
                 dataForCountryCode.put(new String[]{countryCode, countryName}, rowData);
             }
@@ -58,7 +58,7 @@ public class XlsxDataParser {
 
         }
     }
-    public HashMap<String[], HashMap<String, BasicResponse>> getParsedData(){
+    public HashMap<String[], HashMap<String, ExtendedResponse>> getParsedData(){
         return dataForCountryCode;
     }
 
