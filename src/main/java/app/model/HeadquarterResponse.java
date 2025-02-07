@@ -90,8 +90,7 @@ public class HeadquarterResponse implements Response {
         return branches;
     }
 
-    public HeadquarterResponse setBranches(Response[] branches) {
+    public void setBranches(Response[] branches) {
         this.branches = branches;
-        return this;
     }
 }

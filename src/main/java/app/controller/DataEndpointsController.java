@@ -1,10 +1,16 @@
 package app.controller;
 
+import app.model.BasicResponse;
+import app.model.CountriesResponse;
 import app.model.ExtendedResponse;
 import app.Response;
 import app.service.DatabaseService;
+import com.mongodb.client.FindIterable;
+import org.bson.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/v1/swift-codes")
@@ -21,9 +27,14 @@ public class DataEndpointsController {
     }
 
     @GetMapping("/country/{countryISO2code}")
-    public  void getCountrySwiftCodes(@PathVariable String countryISO2code) {
-        // TODO pobrać z bazy  SwiftCode'y dla kraju i zwrócić jes w odpowiednim formacie
-        //TODO response o odpowiedniej strukturze
+    public  ResponseEntity<CountriesResponse> getCountrySwiftCodes(@PathVariable String countryISO2code) {
+        CountriesResponse response;
+        FindIterable<Document> data = databaseService.getDataForCountry(countryISO2code);
+        // TODO przerobić data na response, wstawić countryName
+        response = new CountriesResponse(countryISO2code, "CHANGE IT LATER", new BasicResponse[0]);
+        ArrayList<BasicResponse> swiftCodes = new ArrayList<>();
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping

@@ -2,8 +2,10 @@ package app.service;
 
 import app.Database;
 import app.Response;
+import app.model.BasicResponse;
 import app.model.ExtendedResponse;
 import app.model.HeadquarterResponse;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -38,14 +40,21 @@ public class DatabaseService {
             if(isHeadquarter) {
                 response = new HeadquarterResponse(data.getString("address"), data.getString("bankName"), data.getString("countryISO2"), data.getString("countryName"), isHeadquarter, swiftCode, new Response[0]);
                 ArrayList<Response> branches = new ArrayList<>();
-
-                // TODO znaleźć powiązane branche i zrobić setBranches na repsonse
+                for(Document document: collection.find()) {
+                    String otherSwiftCode = document.getString("swiftCode");
+                    if(otherSwiftCode.substring(0,8).equals(swiftCode.substring(0,8)) && !otherSwiftCode.equals(swiftCode)) {
+                        branches.add(new BasicResponse(document.getString("address"), document.getString("bankName"), document.getString("countryISO2"), document.getBoolean("isHeadquarter"), otherSwiftCode));
+                    }
+                }
+                ((HeadquarterResponse) response).setBranches(branches.toArray(new Response[0]));
             }
             else{
                 response = new ExtendedResponse(data.getString("address"), data.getString("bankName"), data.getString("countryISO2"), data.getString("countryName"), isHeadquarter, swiftCode);
             }
         }
-        System.out.println("Zwracam responce: "+response);
         return response;
+    }
+    public FindIterable<Document> getDataForCountry(String countryISO2) {
+        return db.getCollection(countryISO2).find();
     }
 }

@@ -2,10 +2,11 @@ package app;
 import app.model.BasicResponse;
 import app.model.ExtendedResponse;
 import app.model.HeadquarterResponse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "swiftCode")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ExtendedResponse.class, name = "extended"),
         @JsonSubTypes.Type(value = HeadquarterResponse.class, name = "headquarter"),
@@ -23,4 +24,5 @@ public interface Response {
     String getCountryISO2();
     boolean isHeadquarter();
     String getSwiftCode();
+
 }
