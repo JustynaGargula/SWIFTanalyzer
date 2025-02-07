@@ -6,7 +6,6 @@ import app.model.ExtendedResponse;
 import app.model.Response;
 import app.service.DatabaseService;
 import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class DataEndpointsController {
     }
 
     @GetMapping("/{swiftCode}")
-    public ResponseEntity<Response> getSingleSwiftCode(@PathVariable String swiftCode) {
+    public ResponseEntity<Response> getSingleSwiftCodeData(@PathVariable String swiftCode) {
         return ResponseEntity.ok(databaseService.getDataForSwiftCode(swiftCode));
     }
 

@@ -26,8 +26,8 @@ public class HeadquarterResponse implements Response {
     public HeadquarterResponse(String address, String bankName, String countryISO2, String countryName, boolean isHeadquarter, String swiftCode, Response[] branches) {
         this.address = address;
         this.bankName = bankName;
-        this.countryISO2 = countryISO2;
-        this.countryName = countryName;
+        this.countryISO2 = countryISO2.toUpperCase();
+        this.countryName = countryName.toUpperCase();
         this.isHeadquarter = isHeadquarter;
         this.swiftCode = swiftCode;
         this.branches = branches;

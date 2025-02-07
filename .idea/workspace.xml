@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Did second GET endpoint and refactored a little.">
+    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Finished endpoints.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/DataEndpointsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/DataEndpointsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/model/BasicResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/BasicResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/model/ExtendedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/ExtendedResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/model/HeadquarterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/HeadquarterResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,6 +64,10 @@
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "JUnit.DataEndpointsControllerTest.getCountrySwiftCodes.executor": "Run",
+    "JUnit.DataEndpointsControllerTest.getSingleSwiftCodeData.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -76,6 +78,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Main.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Foldery/informatyka - dom/zadania na staż - aplikacje/Remitly2025/SWIFTanalyzer",
@@ -91,44 +95,94 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#4" index="4" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DataEndpointsControllerTest.deleteSwiftCode">
     <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#5" index="5" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="DataEndpointsControllerTest.addSwiftCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWIFTanalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.controller" />
+      <option name="MAIN_CLASS_NAME" value="app.controller.DataEndpointsControllerTest" />
+      <option name="METHOD_NAME" value="addSwiftCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataEndpointsControllerTest.deleteSwiftCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWIFTanalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.controller" />
+      <option name="MAIN_CLASS_NAME" value="app.controller.DataEndpointsControllerTest" />
+      <option name="METHOD_NAME" value="deleteSwiftCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataEndpointsControllerTest.getCountrySwiftCodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWIFTanalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.controller" />
+      <option name="MAIN_CLASS_NAME" value="app.controller.DataEndpointsControllerTest" />
+      <option name="METHOD_NAME" value="getCountrySwiftCodes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataEndpointsControllerTest.getSingleSwiftCodeData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWIFTanalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.controller" />
+      <option name="MAIN_CLASS_NAME" value="app.controller.DataEndpointsControllerTest" />
+      <option name="METHOD_NAME" value="getSingleSwiftCodeData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="SWIFTanalyzer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="app.Main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="JUnit.DataEndpointsControllerTest.deleteSwiftCode" />
+        <item itemvalue="JUnit.DataEndpointsControllerTest.addSwiftCode" />
+        <item itemvalue="JUnit.DataEndpointsControllerTest.getCountrySwiftCodes" />
+        <item itemvalue="JUnit.DataEndpointsControllerTest.getSingleSwiftCodeData" />
         <item itemvalue="HTTP Request.generated-requests | #5" />
-        <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="HTTP Request.generated-requests | #3" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +214,7 @@
       <workItem from="1738753568064" duration="4249000" />
       <workItem from="1738862618682" duration="2728000" />
       <workItem from="1738929468681" duration="7827000" />
-      <workItem from="1738950034603" duration="6657000" />
+      <workItem from="1738950034603" duration="10432000" />
     </task>
     <task id="LOCAL-00001" summary="Prepared response classes.">
       <created>1738261486056</created>
@@ -248,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738953359737</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Finished endpoints.">
+      <option name="closed" value="true" />
+      <created>1738958108520</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738958108520</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +343,7 @@
     <MESSAGE value="Made first GET endpoint work." />
     <MESSAGE value="Fixed first GET endpoint and started second." />
     <MESSAGE value="Did second GET endpoint and refactored a little." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did second GET endpoint and refactored a little." />
+    <MESSAGE value="Finished endpoints." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished endpoints." />
   </component>
 </project>
