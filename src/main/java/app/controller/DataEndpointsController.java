@@ -6,11 +6,13 @@ import app.model.ExtendedResponse;
 import app.model.Response;
 import app.service.DatabaseService;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/v1/swift-codes")
@@ -30,9 +32,8 @@ public class DataEndpointsController {
     public  ResponseEntity<CountriesResponse> getCountrySwiftCodes(@PathVariable String countryISO2code) {
         CountriesResponse response;
         FindIterable<Document> data = databaseService.getDataForCountry(countryISO2code);
-        // TODO przerobić data na response, wstawić countryName
         if(data != null) {
-            String countryName = data.first().getString("countryName");
+            String countryName = Objects.requireNonNull(data.first()).getString("countryName");
             response = new CountriesResponse(countryISO2code, countryName, new BasicResponse[0]);
             ArrayList<BasicResponse> swiftCodes = new ArrayList<>();
             for(Document document : data) {
@@ -46,13 +47,13 @@ public class DataEndpointsController {
     }
 
     @PostMapping
-    public void addSwiftCode(@RequestBody ExtendedResponse request){
-        // TODO czy ExtendedResponse może być?, dodać do bazy dane z requesta
-        //TODO response o odpowiedniej strukturze
+    public ResponseEntity<String> addSwiftCode(@RequestBody ExtendedResponse request){
+        String message = databaseService.addDataToDatabase(request);
+        return ResponseEntity.ok("message: "+message);
     }
     @DeleteMapping("/{swiftCode}")
-    public void deleteSwiftCode(@PathVariable String swiftCode){
-        // TODO usunięcie danych dla swiftcode
-        //TODO response o odpowiedniej strukturze
+    public ResponseEntity<String> deleteSwiftCode(@PathVariable String swiftCode){
+        String message = databaseService.deleteDataFromDatabase(swiftCode);
+        return ResponseEntity.ok("message: "+message);
     }
 }

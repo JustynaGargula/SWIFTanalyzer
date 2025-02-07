@@ -2,7 +2,8 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "swiftCode")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "type", defaultImpl = ExtendedResponse.class, visible = false)
+
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ExtendedResponse.class, name = "extended"),
         @JsonSubTypes.Type(value = HeadquarterResponse.class, name = "headquarter"),
@@ -14,11 +15,13 @@ public interface Response {
     String countryISO2 = "";
     boolean isHeadquarter = false;
     String swiftCode = "";
+    String type = "";
 
     String getAddress();
     String getBankName();
     String getCountryISO2();
     boolean isHeadquarter();
     String getSwiftCode();
+    String getType();
 
 }

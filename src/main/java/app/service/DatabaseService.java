@@ -54,7 +54,38 @@ public class DatabaseService {
         }
         return response;
     }
+
     public FindIterable<Document> getDataForCountry(String countryISO2) {
         return db.getCollection(countryISO2).find();
+    }
+
+    public String addDataToDatabase(ExtendedResponse request) {
+        String swiftCode = request.getSwiftCode();
+        try {
+            String countryCode = request.getCountryISO2();
+            MongoCollection<Document> collection = db.getCollection(countryCode);
+            if(collection.find(new Document("swiftCode", swiftCode)).first() == null) {
+                Document doc = new Document("address", request.getAddress())
+                        .append("bankName", request.getBankName())
+                        .append("countryISO2", request.getCountryISO2().toUpperCase())
+                        .append("countryName", request.getCountryName().toUpperCase())
+                        .append("isHeadquarter", request.isHeadquarter())
+                        .append("swiftCode", swiftCode);
+                collection.insertOne(doc);
+            }
+        return "Successfully added data for SWIFT code "+swiftCode+" to the database";
+        } catch (Exception e) {
+            return "Error while adding data for SWIFT code "+swiftCode+" to the database";
+        }
+    }
+
+    public String deleteDataFromDatabase(String swiftCode) {
+        String countryCode = swiftCode.substring(4, 6);
+        try {
+            db.getCollection(countryCode).deleteOne(new Document("swiftCode", swiftCode));
+            return "Successfully deleted data for SWIFT code "+swiftCode;
+        } catch (Exception e) {
+            return "Error while deleting data for SWIFT code "+swiftCode;
+        }
     }
 }

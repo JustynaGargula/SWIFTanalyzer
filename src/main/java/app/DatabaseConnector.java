@@ -57,8 +57,8 @@ public class DatabaseConnector {
                         response = data.get(key).get(swiftCode);
                         doc = new Document("address", response.getAddress())
                                 .append("bankName", response.getBankName())
-                                .append("countryISO2", response.getCountryISO2())
-                                .append("countryName", response.getCountryName())
+                                .append("countryISO2", response.getCountryISO2().toUpperCase())
+                                .append("countryName", response.getCountryName().toUpperCase())
                                 .append("isHeadquarter", response.isHeadquarter())
                                 .append("swiftCode", swiftCode);
                         collection.insertOne(doc);

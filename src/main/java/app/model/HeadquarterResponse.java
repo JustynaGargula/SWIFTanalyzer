@@ -1,5 +1,7 @@
 package app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class HeadquarterResponse implements Response {
     /*
     This implementation of Response contains 7 fields:
@@ -19,6 +21,7 @@ public class HeadquarterResponse implements Response {
     private boolean isHeadquarter;
     private String swiftCode;
     private Response[] branches;
+    private final String type = "headquarter";
 
     public HeadquarterResponse(String address, String bankName, String countryISO2, String countryName, boolean isHeadquarter, String swiftCode, Response[] branches) {
         this.address = address;
@@ -90,5 +93,10 @@ public class HeadquarterResponse implements Response {
 
     public void setBranches(Response[] branches) {
         this.branches = branches;
+    }
+
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
 }

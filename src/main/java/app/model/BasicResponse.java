@@ -1,5 +1,7 @@
 package app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class BasicResponse implements Response {
     /*
     This implementation of Response contains 5 fields:
@@ -15,6 +17,7 @@ public class BasicResponse implements Response {
     private String countryISO2;
     private boolean isHeadquarter;
     private String swiftCode;
+    private final String type="basic";
 
     public BasicResponse(String address, String bankName, String countryISO2, boolean isHeadquarter, String swiftCode) {
         this.address = address;
@@ -67,5 +70,10 @@ public class BasicResponse implements Response {
     public BasicResponse setSwiftCode(String swiftCode) {
         this.swiftCode = swiftCode;
         return this;
+    }
+
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
 }
