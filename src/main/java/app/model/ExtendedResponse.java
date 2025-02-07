@@ -1,7 +1,5 @@
 package app.model;
 
-import app.Response;
-
 public class ExtendedResponse implements Response {
     /*
     This implementation of Response contains 6 fields:

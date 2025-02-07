@@ -1,7 +1,7 @@
 package app.service;
 
-import app.Database;
-import app.Response;
+import app.DatabaseConnector;
+import app.model.Response;
 import app.model.BasicResponse;
 import app.model.ExtendedResponse;
 import app.model.HeadquarterResponse;
@@ -23,8 +23,8 @@ public class DatabaseService {
         Dotenv dotenv = Dotenv.load();
         String dbUri=dotenv.get("MONGO_URI");
 
-        Database databaseConnector = new Database("SWIFTcodes",dbUri);
-        databaseConnector.createDatabase();
+        DatabaseConnector databaseConnector = new DatabaseConnector("SWIFTcodes",dbUri);
+        databaseConnector.connectToDatabase();
         db = databaseConnector.getDatabase();
     }
 

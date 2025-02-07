@@ -9,15 +9,15 @@ import java.util.HashMap;
 
 @SpringBootApplication
 public class Main {
-    private static Database db;
+    private static DatabaseConnector db;
 
     public static void main(String[] args) {
 
-        // connecting to database
-        Dotenv dotenv = Dotenv.load();
-        String dbUri=dotenv.get("MONGO_URI");
-        db = new Database("SWIFTcodes", dbUri);
-        db.createDatabase();
+        // connecting to database //<-- currently handled by DatabaseService for REST connections
+//        Dotenv dotenv = Dotenv.load();
+//        String dbUri=dotenv.get("MONGO_URI");
+//        db = new DatabaseConnector("SWIFTcodes", dbUri);
+//        db.connectToDatabase();
 
         // parsing data from .xlsx file and sending it to database
         //parseAndSendData();   //<-- currently omitted as data is already in the database

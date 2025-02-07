@@ -1,8 +1,4 @@
-package app;
-import app.model.BasicResponse;
-import app.model.ExtendedResponse;
-import app.model.HeadquarterResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package app.model;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 

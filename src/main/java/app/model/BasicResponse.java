@@ -1,7 +1,5 @@
 package app.model;
 
-import app.Response;
-
 public class BasicResponse implements Response {
     /*
     This implementation of Response contains 5 fields:

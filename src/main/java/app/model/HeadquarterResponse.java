@@ -1,7 +1,5 @@
 package app.model;
 
-import app.Response;
-
 public class HeadquarterResponse implements Response {
     /*
     This implementation of Response contains 7 fields:

@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Made first GET endpoint work.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/CountriesResponse.java" afterDir="false" />
+    <list default="true" id="88d30329-a49e-498e-84ff-b21887b6812c" name="Changes" comment="Fixed first GET endpoint and started second.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/DataEndpointsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/DataEndpointsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/BasicResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/BasicResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/ExtendedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/ExtendedResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/model/HeadquarterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/HeadquarterResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/DatabaseService.java" afterDir="false" />
     </list>
@@ -60,6 +63,7 @@
     "Application.Main.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -85,7 +89,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="HTTP Request.generated-requests | #2">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="SWIFTanalyzer" />
@@ -103,6 +107,9 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -125,8 +132,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="Spring Boot.Main" />
       </list>
@@ -160,7 +168,7 @@
       <workItem from="1738753568064" duration="4249000" />
       <workItem from="1738862618682" duration="2728000" />
       <workItem from="1738929468681" duration="7827000" />
-      <workItem from="1738950034603" duration="1140000" />
+      <workItem from="1738950034603" duration="1924000" />
     </task>
     <task id="LOCAL-00001" summary="Prepared response classes.">
       <created>1738261486056</created>
@@ -232,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738935014948</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed first GET endpoint and started second.">
+      <option name="closed" value="true" />
+      <created>1738951217703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738951217703</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +279,7 @@
     <MESSAGE value="Fixed some things." />
     <MESSAGE value="Made fist GET endpoint work." />
     <MESSAGE value="Made first GET endpoint work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made first GET endpoint work." />
+    <MESSAGE value="Fixed first GET endpoint and started second." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed first GET endpoint and started second." />
   </component>
 </project>
